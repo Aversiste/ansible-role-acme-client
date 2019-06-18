@@ -1,0 +1,2 @@
+---
+__acme_client_domains: "{{ acme_client_domains | mandatory }}"

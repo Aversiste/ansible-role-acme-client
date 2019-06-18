@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Tristan Le Guern
+  description: Configure OpenBSD's [acme-client(1)](http://man.openbsd.org/acme-client.1)
+  company: Gwern
+  license: ISC
+  min_ansible_version: 2.0
+  platforms:
+    - name: OpenBSD
+  galaxy_tags:
+    - openbsd
+    - let's encrypt  
+    - acme-client
+dependencies: []
