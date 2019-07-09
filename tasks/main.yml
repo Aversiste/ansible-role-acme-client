@@ -5,12 +5,12 @@
     dest: /etc/acme-client.conf
 
 - name: Ensure account and domain keys are generated
-  command: acme-client -AD "{{ item }}"
+  command: acme-client -AD "{{ item.name }}"
   register: acme
   failed_when: "acme.rc != 0 and acme.rc != 2"
   changed_when: "acme.rc == 0"
   notify: Restart httpd
-  loop: "{{ __acme_client_domains | flatten(levels=1) }}"
+  loop: "{{ __acme_client_domains }}"
 
 - name: Install cron entry to ensure acme cert renewal
   cron:
