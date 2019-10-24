@@ -5,7 +5,7 @@
     dest: /etc/acme-client.conf
 
 - name: Ensure account and domain keys are generated
-  command: acme-client -AD "{{ item.name }}"
+  command: acme-client "{{ item.name }}"
   register: acme
   failed_when: "acme.rc != 0 and acme.rc != 2"
   changed_when: "acme.rc == 0"
