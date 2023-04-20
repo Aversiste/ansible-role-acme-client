@@ -16,5 +16,5 @@
   cron:
     name: "acme-client {{ item.name }}"
     special_time: daily
-    job: "sleep $((RANDOM \\% 2048)) && acme-client {{ item.name }} && rcctl reload httpd"
+    job: "sleep $((RANDOM \\% 2048)) && acme-client {{ item.name }} && rcctl restart {{ acme_client_daemons | join(' ') }}"
   loop: "{{ __acme_client_domains | flatten(levels=1) }}"

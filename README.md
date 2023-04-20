@@ -12,6 +12,7 @@ None
 |----------|-------------|---------|
 | `acme_client_domains` | List of domains. | None |
 | `acme_client_authority` | Authority used to sign the certificates. | letsencrypt |
+| `acme_client_daemons` | List of daemons to restart on change | `[ httpd ]` |
 
 # Dependencies
 

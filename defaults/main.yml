@@ -1,3 +1,5 @@
 ---
 __acme_client_domains: "{{ acme_client_domains | mandatory }}"
 acme_client_authority: letsencrypt
+acme_client_daemons:
+  - httpd
